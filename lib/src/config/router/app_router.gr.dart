@@ -1,118 +1,116 @@
-// **************************************************************************
-// AutoRouteGenerator
-// **************************************************************************
-
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
-// AutoRouteGenerator
+// AutoRouterGenerator
 // **************************************************************************
-//
+
 // ignore_for_file: type=lint
+// coverage:ignore-file
 
-part of 'app_router.dart';
+// ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:auto_route/auto_route.dart' as _i4;
+import 'package:flutter/material.dart' as _i5;
+import 'package:flutter_clean_architecture/src/domain/models/article.dart'
+    as _i6;
+import 'package:flutter_clean_architecture/src/presentation/views/article_details_view.dart'
+    as _i2;
+import 'package:flutter_clean_architecture/src/presentation/views/breaking_news_view.dart'
+    as _i1;
+import 'package:flutter_clean_architecture/src/presentation/views/saved_articles_view.dart'
+    as _i3;
 
-class _$AppRouter extends RootStackRouter {
-  _$AppRouter([GlobalKey<NavigatorState>? navigatorKey]) : super(navigatorKey);
+abstract class $AppRouter extends _i4.RootStackRouter {
+  $AppRouter({super.navigatorKey});
 
   @override
-  final Map<String, PageFactory> pagesMap = {
-    BreakingNewsViewRoute.name: (routeData) {
-      return AdaptivePage<dynamic>(
+  final Map<String, _i4.PageFactory> pagesMap = {
+    BreakingNewsView.name: (routeData) {
+      return _i4.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const BreakingNewsView(),
+        child: const _i1.BreakingNewsView(),
       );
     },
-    ArticleDetailsViewRoute.name: (routeData) {
-      final args = routeData.argsAs<ArticleDetailsViewRouteArgs>();
-      return AdaptivePage<dynamic>(
+    ArticleDetailsView.name: (routeData) {
+      final args = routeData.argsAs<ArticleDetailsViewArgs>();
+      return _i4.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: ArticleDetailsView(
+        child: _i2.ArticleDetailsView(
           key: args.key,
           article: args.article,
         ),
       );
     },
-    SavedArticlesViewRoute.name: (routeData) {
-      return AdaptivePage<dynamic>(
+    SavedArticlesView.name: (routeData) {
+      return _i4.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const SavedArticlesView(),
+        child: const _i3.SavedArticlesView(),
       );
     },
   };
-
-  @override
-  List<RouteConfig> get routes => [
-        RouteConfig(
-          BreakingNewsViewRoute.name,
-          path: '/',
-        ),
-        RouteConfig(
-          ArticleDetailsViewRoute.name,
-          path: '/article-details-view',
-        ),
-        RouteConfig(
-          SavedArticlesViewRoute.name,
-          path: '/saved-articles-view',
-        ),
-      ];
 }
 
 /// generated route for
-/// [BreakingNewsView]
-class BreakingNewsViewRoute extends PageRouteInfo<void> {
-  const BreakingNewsViewRoute()
+/// [_i1.BreakingNewsView]
+class BreakingNewsView extends _i4.PageRouteInfo<void> {
+  const BreakingNewsView({List<_i4.PageRouteInfo>? children})
       : super(
-          BreakingNewsViewRoute.name,
-          path: '/',
+          BreakingNewsView.name,
+          initialChildren: children,
         );
 
-  static const String name = 'BreakingNewsViewRoute';
+  static const String name = 'BreakingNewsView';
+
+  static const _i4.PageInfo<void> page = _i4.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [ArticleDetailsView]
-class ArticleDetailsViewRoute
-    extends PageRouteInfo<ArticleDetailsViewRouteArgs> {
-  ArticleDetailsViewRoute({
-    Key? key,
-    required Article article,
+/// [_i2.ArticleDetailsView]
+class ArticleDetailsView extends _i4.PageRouteInfo<ArticleDetailsViewArgs> {
+  ArticleDetailsView({
+    _i5.Key? key,
+    required _i6.Article article,
+    List<_i4.PageRouteInfo>? children,
   }) : super(
-          ArticleDetailsViewRoute.name,
-          path: '/article-details-view',
-          args: ArticleDetailsViewRouteArgs(
+          ArticleDetailsView.name,
+          args: ArticleDetailsViewArgs(
             key: key,
             article: article,
           ),
+          initialChildren: children,
         );
 
-  static const String name = 'ArticleDetailsViewRoute';
+  static const String name = 'ArticleDetailsView';
+
+  static const _i4.PageInfo<ArticleDetailsViewArgs> page =
+      _i4.PageInfo<ArticleDetailsViewArgs>(name);
 }
 
-class ArticleDetailsViewRouteArgs {
-  const ArticleDetailsViewRouteArgs({
+class ArticleDetailsViewArgs {
+  const ArticleDetailsViewArgs({
     this.key,
     required this.article,
   });
 
-  final Key? key;
+  final _i5.Key? key;
 
-  final Article article;
+  final _i6.Article article;
 
   @override
   String toString() {
-    return 'ArticleDetailsViewRouteArgs{key: $key, article: $article}';
+    return 'ArticleDetailsViewArgs{key: $key, article: $article}';
   }
 }
 
 /// generated route for
-/// [SavedArticlesView]
-class SavedArticlesViewRoute extends PageRouteInfo<void> {
-  const SavedArticlesViewRoute()
+/// [_i3.SavedArticlesView]
+class SavedArticlesView extends _i4.PageRouteInfo<void> {
+  const SavedArticlesView({List<_i4.PageRouteInfo>? children})
       : super(
-          SavedArticlesViewRoute.name,
-          path: '/saved-articles-view',
+          SavedArticlesView.name,
+          initialChildren: children,
         );
 
-  static const String name = 'SavedArticlesViewRoute';
+  static const String name = 'SavedArticlesView';
+
+  static const _i4.PageInfo<void> page = _i4.PageInfo<void>(name);
 }
