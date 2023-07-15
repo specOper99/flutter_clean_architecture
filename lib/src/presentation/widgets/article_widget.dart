@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart' as INTL;
 import 'package:ionicons/ionicons.dart';
 
 import '../../domain/models/article.dart';
@@ -66,6 +67,7 @@ class ArticleWidget extends StatelessWidget {
   }
 
   Widget _buildTitleAndDescription() {
+    final dateFormatter = new INTL.DateFormat('yyyy-MM-dd hh:mm a');
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 7),
@@ -103,7 +105,11 @@ class ArticleWidget extends StatelessWidget {
                 const Icon(Ionicons.time_outline, size: 16),
                 const SizedBox(width: 4),
                 Text(
-                  article.publishedAt ?? '',
+                  article.publishedAt == null
+                      ? ''
+                      : dateFormatter.format(
+                          DateTime.parse(article.publishedAt!),
+                        ),
                   style: const TextStyle(
                     fontSize: 12,
                   ),
