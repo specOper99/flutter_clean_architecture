@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'news_api_service.dart';
+part of 'opinion_service.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,8 @@ part of 'news_api_service.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
 
-class _NewsApiService implements NewsApiService {
-  _NewsApiService(
+class _OpinionApiService implements OpinionApiService {
+  _OpinionApiService(
     this._dio, {
     this.baseUrl,
   }) {
@@ -21,7 +21,7 @@ class _NewsApiService implements NewsApiService {
   String? baseUrl;
 
   @override
-  Future<HttpResponse<BreakingNewsResponse>> getBreakingNewsArticles({
+  Future<HttpResponse<RandomOpinionsResponse>> getRandomOpinions({
     String? apiKey,
     String? sources,
     int? page,
@@ -38,7 +38,7 @@ class _NewsApiService implements NewsApiService {
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<HttpResponse<BreakingNewsResponse>>(Options(
+        _setStreamType<HttpResponse<RandomOpinionsResponse>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -54,7 +54,7 @@ class _NewsApiService implements NewsApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = BreakingNewsResponse.fromMap(_result.data!);
+    final value = RandomOpinionsResponse.fromMap(_result.data!);
     final httpResponse = HttpResponse(value, _result);
     return httpResponse;
   }
