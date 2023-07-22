@@ -11,10 +11,10 @@ abstract class BaseApiRepository {
   /// it returns generic based `DataState`.
   ///
   /// Returns `DataSuccess` that holds the generic data `T` if the response
-  /// is successfully recieved.
+  /// is successfully received.
   ///
   /// Returns `DataFailed` that holds a `DioError` instance if any error occurs
-  /// while sending the request or recieving the response.
+  /// while sending the request or receiving the response.
   @protected
   Future<DataState<T>> getStateOf<T>({
     required Future<HttpResponse<T>> Function() request,
@@ -24,12 +24,12 @@ abstract class BaseApiRepository {
       if (httpResponse.response.statusCode == HttpStatus.ok) {
         return DataSuccess(httpResponse.data);
       } else {
-        throw DioError(
+        throw DioException(
           response: httpResponse.response,
           requestOptions: httpResponse.response.requestOptions,
         );
       }
-    } on DioError catch (error) {
+    } on DioException catch (error) {
       return DataFailed(error);
     }
   }
