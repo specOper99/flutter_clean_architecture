@@ -4,11 +4,14 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get_it/get_it.dart';
 
 import 'data/datasources/local/app_database.dart';
-import 'data/datasources/remote/news_api_service.dart';
-import 'data/repositories/api_repository_impl.dart';
+import 'data/datasources/remote/opinion/opinion_service.dart';
+import 'data/datasources/remote/user/user_service.dart';
 import 'data/repositories/database_repository_impl.dart';
-import 'domain/repositories/api_repository.dart';
+import 'data/repositories/opinion/opinion_api_repository_impl.dart';
+import 'data/repositories/user/user_api_repository_impl.dart';
 import 'domain/repositories/database_repository.dart';
+import 'domain/repositories/opinion/opinion_api_repository.dart';
+import 'domain/repositories/user/user_api_repository.dart';
 import 'utils/constants/strings.dart';
 
 final locator = GetIt.instance;
@@ -24,13 +27,25 @@ Future<void> initializeDependencies() async {
 
   locator.registerSingleton<Dio>(dio);
 
-  locator.registerSingleton<NewsApiService>(
-    NewsApiService(locator<Dio>()),
+  // Opinion API Dependencies
+
+  locator.registerSingleton<OpinionApiService>(
+    OpinionApiService(locator<Dio>()),
+  );
+  locator.registerSingleton<OpinionApiRepository>(
+    OpinionApiRepositoryImpl(locator<OpinionApiService>()),
   );
 
-  locator.registerSingleton<ApiRepository>(
-    ApiRepositoryImpl(locator<NewsApiService>()),
+  // User API Dependencies
+
+  locator.registerSingleton<UserApiService>(
+    UserApiService(locator<Dio>()),
   );
+  locator.registerSingleton<UserApiRepository>(
+    UserApiRepositoryImpl(locator<UserApiService>()),
+  );
+
+  // Local Database Dependencies
 
   locator.registerSingleton<DatabaseRepository>(
     DatabaseRepositoryImpl(locator<AppDatabase>()),
