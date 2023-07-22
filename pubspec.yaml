@@ -1,68 +1,84 @@
-name: flutter_clean_architecture
-description: Flutter Clean Architecture Series
+name: qarar
+description: QARAR is a mobile application that allows users to create and participate in polls.
 publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.19.2 <3.0.0"
+    sdk: ">=2.19.2 <3.0.0"
 
 dependencies:
-  flutter:
-    sdk: flutter
+    flutter:
+        sdk: flutter
 
-  # Icons
-  cupertino_icons: ^1.0.0
-  ionicons: ^0.2.2
+    # Icons
+    cupertino_icons: ^1.0.0
 
-  # Networking
-  retrofit: ^4.0.1
-  dio: ^5.2.1+1
+    # Networking
+    retrofit: ^4.0.1
+    dio: ^5.2.1+1
+    awesome_dio_interceptor: ^1.0.0
 
-  # Setup environment
-  flutter_dotenv: ^5.1.0
+    # Setup environment
+    flutter_dotenv: ^5.1.0
 
-  # State Management
-  flutter_bloc: ^8.1.2
+    # State Management
+    flutter_bloc: ^8.1.2
 
-  # Dependency Injection
-  get_it: ^7.2.0
+    # Dependency Injection
+    get_it: ^7.2.0
 
-  # Local Database ORM
-  floor: ^1.4.1
+    # Local Database ORM
+    floor: ^1.4.1
 
-  # Others
-  flutter_hooks: ^0.19.0
-  equatable: ^2.0.5
-  oktoast: ^3.3.1
-  awesome_dio_interceptor: ^1.0.0
-  auto_route: ^7.7.0
-  intl: ^0.18.1
+    # Localization
+    intl: ^0.18.0
+    flutter_localizations:
+        sdk: flutter
+
+    # Others
+    flutter_hooks: ^0.19.0
+    equatable: ^2.0.5
+    oktoast: ^3.3.1
+    auto_route: ^7.7.0
+    flutter_svg: ^2.0.7
+    freezed_annotation: ^2.4.1
+    json_annotation: ^4.8.1
+    bottom_nav_bar: ^1.0.3
+    d_chart: ^2.3.0
+    fl_chart: ^0.63.0
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
+    flutter_test:
+        sdk: flutter
 
-  lint: ^2.0.1
-  auto_route_generator: ^7.2.0
-  retrofit_generator: ^7.0.8
-  floor_generator: ^1.4.1
-  build_runner: ^2.3.3
-
+    lint: ^2.0.1
+    auto_route_generator: ^7.2.0
+    retrofit_generator: ^7.0.8
+    floor_generator: ^1.4.1
+    build_runner: ^2.3.3
+    json_serializable: ^6.7.1
+    freezed: ^2.4.1
 
 flutter:
-  assets:
-    - .env
-  uses-material-design: true
+    generate: true
 
-  fonts:
-    - family: Butler
-      fonts:
-        - asset: assets/fonts/Butler_Bold.ttf
-        - asset: assets/fonts/Butler_Light.ttf
-        - asset: assets/fonts/Butler_Regular.ttf
+    assets:
+        - .env
+        - assets/images/
+        - assets/svgs/
+    uses-material-design: true
 
-    - family: IBM
-      fonts:
-        - asset: assets/fonts/IBMPlexSans-Bold.ttf
-        - asset: assets/fonts/IBMPlexSans-Light.ttf
-        - asset: assets/fonts/IBMPlexSans-Regular.ttf
+    fonts:
+        - family: Ping AR + LT
+          fonts:
+              - asset: assets/fonts/Ping/PingAR+LT-Regular.otf
+              - asset: assets/fonts/Ping/PingAR+LT-Bold.otf
+              - asset: assets/fonts/Ping/PingAR+LT-Black.otf
+              - asset: assets/fonts/Ping/PingAR+LT-Light.otf
+              - asset: assets/fonts/Ping/PingAR+LT-Medium.otf
+              - asset: assets/fonts/Ping/PingAR+LT-Thin.otf
+              - asset: assets/fonts/Ping/PingAR+LT-Hairline.otf
+
+        - family: ITC-Handel-Gothic-Arabic-Bold
+          fonts:
+              - asset: assets/fonts/ITC-Handel-Gothic-Arabic-Bold.ttf
