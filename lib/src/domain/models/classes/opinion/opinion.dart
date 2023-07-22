@@ -3,21 +3,15 @@ import 'package:equatable/equatable.dart';
 import 'package:floor/floor.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../../utils/constants/strings.dart';
-
 part 'opinion.freezed.dart';
 part 'opinion.g.dart';
 
 @freezed
-@Entity(tableName: opinionsTableName)
 class Opinion extends Equatable with _$Opinion {
   const Opinion._();
 
   factory Opinion({
-    @JsonKey(includeFromJson: false, includeToJson: false)
-    @PrimaryKey(autoGenerate: true)
-    int? id,
-    @JsonKey(name: 'id') required String? serverUUID,
+    required int id,
     required String title,
     required String description,
     required String url,
@@ -33,7 +27,6 @@ class Opinion extends Equatable with _$Opinion {
   List<Object?> get props {
     return [
       id,
-      serverUUID,
       title,
       description,
       url,
