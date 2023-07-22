@@ -1,4 +1,4 @@
-package com.example.flutter_clean_architecture
+package com.mediaZan.qarar
 
 import io.flutter.embedding.android.FlutterActivity
 
