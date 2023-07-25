@@ -45,6 +45,7 @@ dependencies:
     fl_chart: ^0.63.0
     shared_preferences: ^2.2.0
     url_launcher: ^6.1.12
+    jwt_decoder: ^2.0.1
 
 dev_dependencies:
     flutter_test:
@@ -81,3 +82,6 @@ flutter:
         - family: ITC-Handel-Gothic-Arabic-Bold
           fonts:
               - asset: assets/fonts/ITC-Handel-Gothic-Arabic-Bold.ttf
+
+import_sorter:
+    emojis: true

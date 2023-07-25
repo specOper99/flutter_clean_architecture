@@ -2,4 +2,4 @@ targets:
   $default:
     sources:
       exclude:
-        - 'lib/src/data/datasources/local/app_tokens_storage.g.dart'
+        - 'lib/src/auth/data/datasources/local/app_tokens_storage.g.dart'
